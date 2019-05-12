@@ -16,21 +16,21 @@ class Location(models.Model):
     def update_location(location_id, location):
         Location.objects.filter(id = location_id).update(location_name = location)
 
-# class Category(models.Model):
-#     category_name = models.CharField(max_length = 50)
-#
-#     def __str__(self):
-#         return self.category_name
-#
-#     def save_category(self):
-#         self.save()
-#
-#     def delete_category(category_id):
-#         Category.objects.filter(id = category_id).delete()
-#
-#     def update_category(category_id, category):
-#         Category.objects.filter(id = category_id).update(category_name = category)
-#
+class Category(models.Model):
+    category_name = models.CharField(max_length = 50)
+
+    def __str__(self):
+        return self.category_name
+
+    def save_category(self):
+        self.save()
+
+    def delete_category(category_id):
+        Category.objects.filter(id = category_id).delete()
+
+    def update_category(category_id, category):
+        Category.objects.filter(id = category_id).update(category_name = category)
+
 # class Photographer(models.Model):
 #     names = models.CharField(max_length = 50)
 #     email = models.EmailField(blank = True)
