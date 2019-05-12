@@ -119,6 +119,14 @@ button{
 
 @media only screen and (min-width: 812px) {
   .imag{
-    height: 450px;
+    height: 350px;
+  }
+  .imtitle h1{
+    margin: auto;
+    font-size; 600px;
+    text-align: center;
+  }
+  .imtitle img{
+    margin: auto;
   }
 }
