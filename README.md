@@ -19,7 +19,7 @@ This is an online gallery where I post my personal pictures and people can view 
 * Install all the requirements found in requirements file.
 * On your terminal run `python manage.py runserver`
 * Access the live site using the local host provided
-* Or access the live website by clicking on this url
+* Or access the live website by clicking on this url https://fuaadgallery.herokuapp.com/
 
 ## Known Bugs
 No Bugs
