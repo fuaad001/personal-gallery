@@ -70,56 +70,56 @@ class PhotographerTestClass(TestCase):
         photographers = Photographer.objects.all()
         self.assertEqual(len(photographers), 0)
 
-# class ImageTestClass(TestCase):
-#
-#     def setUp(self):
-#         self.loc = Location(location_name = 'Mombasa, Kenya')
-#         self.loc.save_location()
-#
-#         self.cat = Category(category_name = 'official')
-#         self.cat.save_category()
-#
-#         self.pho = Photographer(names = 'Fatma Fuaad', email = 'fatmafuaad23@gmail.com', ig = 'fatmafuaad', phone_number = '0712345678')
-#         self.pho.save_photographer()
-#
-#         self.img = Image(image_path = 'fuaad.png', name = 'passport photo', description = 'photo fo passports', location = self.loc, category = self.cat, photographer = self.pho)
-#
-#     def tearDown(self):
-#         Location.objects.all().delete()
-#         Category.objects.all().delete()
-#         Photographer.objects.all().delete()
-#         Image.objects.all().delete()
-#
-#     # Testing instance
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.img, Image))
-#
-#     def test_save_image(self):
-#         self.img.save_image()
-#         images = Image.objects.all()
-#         self.assertTrue(len(images) > 0)
-#
-#     def test_delete_image(self):
-#         self.img.save_image()
-#         Image.delete_image(self.img.id)
-#         images = Image.objects.all()
-#         self.assertEqual(len(images), 0)
-#
-#     def test_get_image_by_id(self):
-#         self.img.save_image()
-#         image = Image.get_image_by_id(self.img.id)
-#         self.assertEqual(self.img, image)
-#
-#     def test_search_image(self):
-#         self.img.save_image()
-#         image = Image.search_image(self.img.category)
-#         self.assertEqual(image)
-#
-#     def test_filter_by_location(self):
-#         self.img.save_image()
-#         image = Image.filter_by_location(self.img.location)
-#         self.assertEqual(image)
-#
-#     def test_update_image(self):
-#         Image.update_image(self.img.id, 'fatma.png')
-#         self.assertEqual(self.img.image_path, 'fatma.png')
+class ImageTestClass(TestCase):
+
+    def setUp(self):
+        self.loc = Location(location_name = 'Mombasa, Kenya')
+        self.loc.save_location()
+
+        self.cat = Category(category_name = 'official')
+        self.cat.save_category()
+
+        self.pho = Photographer(names = 'Fatma Fuaad', email = 'fatmafuaad23@gmail.com', ig = 'fatmafuaad', phone_number = '0712345678')
+        self.pho.save_photographer()
+
+        self.img = Image(image_path = 'fuaad.png', name = 'passport photo', description = 'photo fo passports', location = self.loc, category = self.cat, photographer = self.pho)
+
+    def tearDown(self):
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+        Photographer.objects.all().delete()
+        Image.objects.all().delete()
+
+    # Testing instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.img, Image))
+
+    def test_save_image(self):
+        self.img.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
+
+    def test_delete_image(self):
+        self.img.save_image()
+        Image.delete_image(self.img.id)
+        images = Image.objects.all()
+        self.assertEqual(len(images), 0)
+
+    def test_get_image_by_id(self):
+        self.img.save_image()
+        image = Image.get_image_by_id(self.img.id)
+        self.assertEqual(self.img, image)
+
+    def test_search_image(self):
+        self.img.save_image()
+        image = Image.search_image(self.img.category)
+        self.assertEqual(image)
+
+    def test_filter_by_location(self):
+        self.img.save_image()
+        image = Image.filter_by_location(self.img.location)
+        self.assertEqual(image)
+
+    def test_update_image(self):
+        Image.update_image(self.img.id, 'fatma.png')
+        self.assertEqual(self.img.image_path, 'fatma.png')
