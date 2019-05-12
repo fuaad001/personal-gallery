@@ -21,8 +21,8 @@ def search_page(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
 
-def sortby_locations(request, location):
-    images = Image.filter_by_location(location)
+def sortby_locations(request):
+    images = Image.filter_by_location()
 
     return render(request, 'location.html', {"images":images})
 

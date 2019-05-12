@@ -1,3 +1,12 @@
+.row{
+  text-align: center;
+}
+
+nav{
+  background-color: #5cb85c;
+  text-align: left;
+}
+
 .card-header h1{
   color: white;
 }
@@ -14,6 +23,60 @@
   padding-bottom: 1%;
 }
 
+img:hover{
+  opacity: 0.9;
+  box-shadow: 3px 3px 3px grey;
+}
+
 .single{
   height: 320px;
+}
+
+#myModal{
+    padding-top: 10%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.close {
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 40px;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.close:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+img{
+  width: 100%;
+  border-radius: 3%;
+  border: 2px solid grey;
+}
+
+#copy{
+  color: white;
+  text-decoration: none;
+}
+
+button{
+  text-align: center;
 }

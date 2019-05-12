@@ -6,4 +6,15 @@ $(document).ready(function(){
     document.execCommand("copy");
     alert("Copied the url: " + copyText.value);
   })
+
+  // Modals
+  $('.selectedImage').click(function(){
+    $('#myModal').css('display', "block")
+    $("#modal-con").attr('src',$(this).attr('src'))
+  })
+
+  $(".close").click(function() {
+    $('#myModal').css('display', "none");
+    $('#modal-details').css('display', 'none')
+  })
 })

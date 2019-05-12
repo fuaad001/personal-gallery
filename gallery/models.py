@@ -72,12 +72,12 @@ class Image(models.Model):
 
     @classmethod
     def search_image(cls, search_category):
-        images = cls.objects.filter(category__category__icontains=search_category)
+        images = cls.objects.filter(category__category_name__icontains=search_category)
         return images
 
     @classmethod
-    def filter_by_location(cls, search_location):
-        images = cls.objects.filter(location=search_location)
+    def filter_by_location(cls):
+        images = cls.objects.order_by('location')
         return images
 
     class Meta:

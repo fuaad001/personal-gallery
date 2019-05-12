@@ -1,12 +1,12 @@
-{% extends 'base.html' %}
+{%extends 'base.html'%}
 {% block content %}
 <div class="container">
 
   <div class="row">
     {% if images%}
-      <h2>Found {{ images|length }} of searched category {{message}}</h2>
+      <h2>{{ images|length }} ordered by their locations</h2>
     {% else %}
-      <h2> Found 0 images for the search category {{message}}</h2>
+      <h2> No Images Available</h2>
     {% endif %}
 
   </div>
@@ -19,6 +19,7 @@
           <h1>{{image.name}}</h1>
           <a href="{% url 'single_image' image.id %}"> Go to Copy Url </a>
           <img src="{{image.image_path.url}}" class="img-responsive selectedImage" alt="Image">
+          <h3>{{image.location}}</h3>
       </div>
 
       <div id="myModal" class="modal">
