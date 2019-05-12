@@ -31,21 +31,21 @@ class Category(models.Model):
     def update_category(category_id, category):
         Category.objects.filter(id = category_id).update(category_name = category)
 
-# class Photographer(models.Model):
-#     names = models.CharField(max_length = 50)
-#     email = models.EmailField(blank = True)
-#     ig = models.CharField(max_length = 20, blank = True)
-#     phone_number = models.CharField(max_length = 10,blank =True)
-#
-#     def __str__(self):
-#         return self.names
-#
-#     def save_photographer(self):
-#         self.save()
-#
-#     def delete_photographer(photographer_id):
-#         Photographer.objects.filter(id = photographer_id).delete()
-#
+class Photographer(models.Model):
+    names = models.CharField(max_length = 50)
+    email = models.EmailField(blank = True)
+    ig = models.CharField(max_length = 20, blank = True)
+    phone_number = models.CharField(max_length = 10,blank =True)
+
+    def __str__(self):
+        return self.names
+
+    def save_photographer(self):
+        self.save()
+
+    def delete_photographer(photographer_id):
+        Photographer.objects.filter(id = photographer_id).delete()
+
 # class Image(models.Model):
 #     image_path = models.ImageField(upload_to = 'images/')
 #     name = models.CharField(max_length = 50)
