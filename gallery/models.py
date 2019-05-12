@@ -50,8 +50,8 @@ class Image(models.Model):
     image_path = models.ImageField(upload_to = 'images/')
     name = models.CharField(max_length = 50)
     description = models.TextField(blank = True)
-    location = models.ForeignKey(Location)
-    category = models.ForeignKey(Category)
+    location = models.ForeignKey(Location, blank=True)
+    category = models.ForeignKey(Category, blank=True)
     photographer = models.ForeignKey(Photographer)
 
     def __str__(self):
@@ -71,11 +71,14 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def search_image(cls, category):
-        images = cls.objects.filter(category__icontains=category)
+    def search_image(cls, search_category):
+        images = cls.objects.filter(category__category__icontains=search_category)
         return images
 
     @classmethod
-    def filter_by_location(cls, location):
-        images = cls.objects.filter(location__icontains = location)
+    def filter_by_location(cls, search_location):
+        images = cls.objects.filter(location=search_location)
         return images
+
+    class Meta:
+        ordering = ['name']

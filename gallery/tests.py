@@ -113,12 +113,12 @@ class ImageTestClass(TestCase):
     def test_search_image(self):
         self.img.save_image()
         image = Image.search_image(self.img.category)
-        self.assertEqual(self.img, image)
+        self.assertEqual(image)
 
     def test_filter_by_location(self):
         self.img.save_image()
         image = Image.filter_by_location(self.img.location)
-        self.assertEqual(self.img, image)
+        self.assertEqual(image)
 
     def test_update_image(self):
         Image.update_image(self.img.id, 'fatma.png')
