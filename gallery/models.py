@@ -46,39 +46,39 @@ class Photographer(models.Model):
     def delete_photographer(photographer_id):
         Photographer.objects.filter(id = photographer_id).delete()
 
-# class Image(models.Model):
-#     image_path = models.ImageField(upload_to = 'images/')
-#     name = models.CharField(max_length = 50)
-#     description = models.TextField(blank = True)
-#     location = models.ForeignKey(Location, blank=True)
-#     category = models.ForeignKey(Category, blank=True)
-#     photographer = models.ForeignKey(Photographer)
-#
-#     def __str__(self):
-#         return self.name
-#
-#     def save_image(self):
-#         self.save()
-#
-#     def delete_image(image_id):
-#         Image.objects.filter(id = image_id).delete()
-#
-#     def update_image(image_id, path):
-#         Image.objects.filter(id = image_id).update(image_path = path)
-#
-#     def get_image_by_id(image_id):
-#         image = Image.objects.get(pk = image_id)
-#         return image
-#
-#     @classmethod
-#     def search_image(cls, search_category):
-#         images = cls.objects.filter(category__category_name__icontains=search_category)
-#         return images
-#
-#     @classmethod
-#     def filter_by_location(cls):
-#         images = cls.objects.order_by('location')
-#         return images
-#
-#     class Meta:
-#         ordering = ['name']
+class Image(models.Model):
+    image_path = models.ImageField(upload_to = 'images/')
+    name = models.CharField(max_length = 50)
+    description = models.TextField(blank = True)
+    location = models.ForeignKey(Location, blank=True)
+    category = models.ForeignKey(Category, blank=True)
+    photographer = models.ForeignKey(Photographer)
+
+    def __str__(self):
+        return self.name
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(image_id):
+        Image.objects.filter(id = image_id).delete()
+
+    def update_image(image_id, path):
+        Image.objects.filter(id = image_id).update(image_path = path)
+
+    def get_image_by_id(image_id):
+        image = Image.objects.get(pk = image_id)
+        return image
+
+    @classmethod
+    def search_image(cls, search_category):
+        images = cls.objects.filter(category__category_name__icontains=search_category)
+        return images
+
+    @classmethod
+    def filter_by_location(cls):
+        images = cls.objects.order_by('location')
+        return images
+
+    class Meta:
+        ordering = ['name']
