@@ -2,24 +2,22 @@
 {% block content %}
 <div class="container">
 
-  <div class="row">
-    {% if images%}
-      <h2>{{ images|length }} ordered by their locations</h2>
-    {% else %}
-      <h2> No Images Available</h2>
-    {% endif %}
-
+  <div class="imtitle" style="display: flex; text-align: center; margin: 5%;">
+    <img src="http://www.pngmart.com/files/7/Gallery-PNG-Pic.png" style="width: 12%; border: none"; height="12%; margin-right: 2%">
+    <h1>FUAAD'S GALLERY</h1>
   </div>
+
+  <hr>
 
   <div class="row">
 
   {% if images %}
     {% for image in images %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{image.name}}</h1>
-          <a href="{% url 'single_image' image.id %}"> Go to Copy Url </a>
-          <img src="{{image.image_path.url}}" class="img-responsive selectedImage" alt="Image">
-          <h3>{{image.location}}</h3>
+      <div class="col-sm-6 col-md-4">
+        <h3>{{image.name}}</h3>
+        <img src="{{image.image_path.url}}" class="img-responsive selectedImage imag">
+        <a href="{% url 'single_image' image.id %}" id='copy'> <button type="button" class="btn btn-success"> Go to Copy Url </button>  </a>
+        <h3>{{image.location}}</h3>
       </div>
 
       <div id="myModal" class="modal">

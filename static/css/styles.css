@@ -1,9 +1,38 @@
+body{
+  background-image: url('https://img.edilportale.com/product-thumbs/b_alpi-rosewood-alpi-352748-relcb0ba271.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imag{
+  height: 200px;
+}
+
+h1, .navbar-brand{
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+}
+
+h3{
+  text-decoration: underline;
+  color: white;
+  font-family: 'Merienda', cursive;
+}
+
+button{
+  font-family: 'Libre Baskerville', serif;
+}
+
+.modal-content, .card-body{
+  font-family: 'Libre Baskerville', serif;
+}
+
 .row{
   text-align: center;
 }
 
 nav{
-  background-color: #5cb85c;
+  background-color: green;
   text-align: left;
 }
 
@@ -70,6 +99,13 @@ img{
   width: 100%;
   border-radius: 3%;
   border: 2px solid grey;
+  margin-bottom: 2%;
+}
+
+.text-center{
+  padding: 3%;
+  background-image: url('https://img.edilportale.com/product-thumbs/b_alpi-rosewood-alpi-352748-relcb0ba271.jpg');
+  color: white;
 }
 
 #copy{
@@ -79,4 +115,10 @@ img{
 
 button{
   text-align: center;
+}
+
+@media only screen and (min-width: 812px) {
+  .imag{
+    height: 450px;
+  }
 }
