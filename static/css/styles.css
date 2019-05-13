@@ -11,6 +11,7 @@ body{
 h1, .navbar-brand{
   font-family: 'Cinzel', serif;
   font-weight: bold;
+  color: white;
 }
 
 h3{
@@ -122,11 +123,12 @@ button{
     height: 350px;
   }
   .imtitle h1{
-    margin: auto;
-    font-size; 600px;
-    text-align: center;
-  }
-  .imtitle img{
-    margin: auto;
-  }
+   margin: auto;
+   font-size: 65px;
+   text-align: center;
+   color: white;
+ }
+ .imtitle img{
+   margin: auto;
+ }
 }
