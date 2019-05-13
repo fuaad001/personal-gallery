@@ -118,6 +118,10 @@ button{
   text-align: center;
 }
 
+.column{
+  margin-bottom: 5%;
+}
+
 @media only screen and (min-width: 812px) {
   .imag{
     height: 350px;
@@ -131,4 +135,13 @@ button{
  .imtitle img{
    margin: auto;
  }
+ .column{
+   width: 33%;
+   padding-left: 1%;
+   padding-right: 1%;
+ }
+}
+
+.imtitle h1{
+  font-size: 50px;
 }
