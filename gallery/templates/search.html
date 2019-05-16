@@ -22,7 +22,7 @@
 
   {% if images %}
     {% for image in images %}
-      <div class="col-sm-12 column">
+    <div class="col-xs-12 col-sm-6 col-md-4 column">
         <h3>{{image.name}}</h3>
         <img src="{{image.image_path.url}}" class="img-responsive selectedImage imag">
         <a href="{% url 'single_image' image.id %}" id='copy'> <button type="button" class="btn btn-success"> Go to Copy Url </button>  </a>
